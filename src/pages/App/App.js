@@ -14,7 +14,7 @@ class App extends Component {
     return(
       <div>
         <h1>Motorcycle Routes</h1>
-        <p>great things to come</p>
+        <p>Your Journey Starts Here</p>
       </div>
     )
   }
