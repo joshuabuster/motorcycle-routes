@@ -1,3 +1,4 @@
+import { getDefaultNormalizer } from '@testing-library/react';
 import React, { Component } from 'react';
 import SignupForm from '../../components/SignupForm/SignupForm';
 import './SignupPage.css';
@@ -21,3 +22,5 @@ class SignupPage extends Component {
       );
     }
   }
+
+export default SignupPage;
