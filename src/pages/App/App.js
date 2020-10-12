@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
-// import SignupPage from '../SignupPage/SignupPage';
+import { Route, Link, NavLink, Switch } from "react-router-dom";
+// import * as routeAPI from "../../utils/routeService";
+// User sign in and login pages
+import LoginPage from "../LoginPage/LoginPage";
+import SignupPage from "../../pages/SignupPage/SignupPage";
+import LandingPage from "../../pages/LandingPage/LandingPage";
+import RoutesIndexPage from "../../pages/RoutesIndexPage/RoutesIndexPage";
+import UserPage from "../../pages/UserPage/UserPage";
+import userService from "../../utils/userService";
 
 class App extends Component {
   constructor() {
     super();
     this.state ={
+      routes: [],
       user: userService.getUser()
     }
   }

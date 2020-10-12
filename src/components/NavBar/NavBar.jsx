@@ -5,11 +5,12 @@ import './NavBar.css';
 const NavBar = (props) => {
   let nav = props.user ?
     <div>
-      <Link to='/' className='NavBar-link'>ROUTES INDEX</Link>
+      <Link to='/index' className='NavBar-link'>ROUTES INDEX</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <Link to='' onClick={props.handleLogout} className='NavBar-link'>LOG OUT</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <span className='NavBar-welcome'>WELCOME, {props.user.name}</span>
+      {/* <Link to='/userpage' className='NavBar-link'>{props.user.name}'s Page</Link> */}
     </div>
     :
     <div>

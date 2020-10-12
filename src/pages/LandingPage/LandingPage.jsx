@@ -2,7 +2,7 @@ import { PromiseProvider } from 'mongoose';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
-import './GamePage.css';
+import './LandingPage.css';
 
 const LandingPage = (props) => {
     return (
