@@ -29,19 +29,22 @@ class App extends Component {
   }
 
   /*-- Lifecycle Methods --*/
+  
 
   render() {
     return(
       <div>
-        <header>Motorcycle Routes</header>
         <Switch>
           <Route exact path='/' render={() =>
-            <LandingPage />
+            <LandingPage 
+              user={this.state.user}
+              handleLogout={this.handleLogout}
+            />
           }/>
           <Route exact path='/signup' render={({ history }) =>
             <SignupPage
               history={history}
-              handlesSignupOrLogin={this.handleSignupOrLogin}
+              handleSignupOrLogin={this.handleSignupOrLogin}
             />
           }/>
           <Route exact path='/login' render={({ history }) =>

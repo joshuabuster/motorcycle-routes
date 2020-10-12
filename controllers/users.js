@@ -5,8 +5,17 @@ const SECRET = process.env.SECRET;
 
 module.exports = {
   signup,
-  login
+  login,
+  showUserPage
 };
+
+async function showUserPage(req, res) {
+  try {
+    const user = await User.findOne({email: req.body.email});
+  } catch (err) {
+    res.status(400).json(err);
+  }
+}
 
 async function login(req, res) {
   try {
@@ -31,6 +40,8 @@ async function signup(req, res) {
     await user.save();
     // TODO: Send back a JWT instead of the user
     const token = createJWT(user);
+    console.log('hit signup function try statement')
+    console.log(user, token)
     res.json({ token });
   } catch (err) {
     // Probably a duplicate email
