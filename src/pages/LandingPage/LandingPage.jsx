@@ -11,7 +11,7 @@ const LandingPage = (props) => {
                 user={props.user}
                 handleLogout={props.handleLogout}
             />
-            <h1>Motorcyle Routes</h1>
+            <h1>Motorcyle Routes Landing Page</h1>
             <p>Your journey starts here</p>
         </div>
     );

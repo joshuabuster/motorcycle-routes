@@ -10,10 +10,11 @@ const NavBar = (props) => {
       <Link to='' onClick={props.handleLogout} className='NavBar-link'>LOG OUT</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <Link to='/userpage' className="Navbar-link">{`${props.user.name.toUpperCase()}'S USERPAGE`}</Link>
-      {/* <Link to='/userpage' className='NavBar-link'>{props.user.name}'s Page</Link> */}
     </div>
     :
     <div>
+      <Link to='/index' className='NavBar-link'>ROUTES INDEX</Link>
+      &nbsp;&nbsp;|&nbsp;&nbsp;
       <Link to='/login' className='NavBar-link'>LOG IN</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;
       <Link to='/signup' className='NavBar-link'>SIGN UP</Link>
