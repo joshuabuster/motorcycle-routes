@@ -57,7 +57,10 @@ class App extends Component {
             <RoutesIndexPage />
           }/>
           <Route exact path='/userpage' render={() =>
-            <UserPage />
+            <UserPage
+              user={this.state.user}
+              handleLogout={this.handleLogout}
+            />
           }/>
         </Switch>
       </div>
