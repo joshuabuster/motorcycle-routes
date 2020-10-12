@@ -2,8 +2,10 @@ const express = require('express');
 const router = express.Router();
 const routesCtrl = require('../../controllers/routes');
 
-/*-- Protected Routes --*/
+/*-- Non Protected Routes --*/
+router.get('/', routesCtrl.index);
 
+/*-- Protected Routes --*/
 
 /*--  Helper Functions --*/
 function checkAuth(req, res, next) {
