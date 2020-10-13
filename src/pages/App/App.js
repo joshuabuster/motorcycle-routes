@@ -29,6 +29,25 @@ class App extends Component {
     );
   };
 
+  handleUpdateRoute = async (updatedRouteData) => {
+    const updatedRoute = await routeAPI.update(updatedRouteData);
+    const newRoutesArray = this.state.routes.map( route => route._id === updatedRoute._id ? updatedRoute : route);
+    this.setState(
+      { routes: newRoutesArray },
+      () => this.props.history.push('/')
+    );
+  };
+
+  handleDeleteRoute = async (id) => {
+    await routeAPI.deleteOne(id);
+    this.setState(
+      (state) => ({
+        routes: state.routes.filter(route => route._id !== id),
+      }),
+      () => this.props.history.push('/')
+    );
+  };
+
   /*-- Auth --*/
   handleLogout = () => {
     userService.logout();
