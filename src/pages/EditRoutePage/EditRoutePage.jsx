@@ -1,16 +1,10 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
-class AddRoutePage extends Component {
+class EditRoutePage extends Component {
   state = {
-    invalidForm: true,
-    formData: {
-      name: '',
-      startPoint: '',
-      endPoint: '',
-      miles: 0,
-      difficulty: 'Moderate',
-      rating: 3,
-    }
+    invalidForm: false,
+    formData: this.props.location.state.route
   };
 
   formRef = React.createRef();
@@ -94,12 +88,14 @@ class AddRoutePage extends Component {
             className="btn"
             disabled={this.state.invalidForm}
           >
-            Add Route
+            Save Route
           </button>
+          &nbsp;&nbsp;
+          <Link to='/userpage'>Cancel</Link>
         </form>
       </div>
     );
   }
 }
 
-export default AddRoutePage;
+export default EditRoutePage;

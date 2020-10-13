@@ -7,6 +7,8 @@ import SignupPage from "../../pages/SignupPage/SignupPage";
 import LandingPage from "../../pages/LandingPage/LandingPage";
 import RoutesIndexPage from "../../pages/RoutesIndexPage/RoutesIndexPage";
 import UserPage from "../../pages/UserPage/UserPage";
+import AddRoutePage from "../../pages/AddRoutePage/AddRoutePage"
+import EditRoutePage from "../../pages/EditRoutePage/EditRoutePage"
 import userService from "../../utils/userService";
 
 class App extends Component {
@@ -97,6 +99,22 @@ class App extends Component {
               user={this.state.user}
               handleLogout={this.handleLogout}
               routes={this.state.routes}
+            />
+          }/>
+          <Route exact path='/add' render={() =>
+            <AddRoutePage
+              user={this.state.user}
+              handleLogout={this.handleLogout}
+              routes={this.state.routes}
+              handleAddRoute={this.handleAddRoute}
+            />
+          }/>
+          <Route exact path='/add' render={() =>
+            <EditRoutePage
+              user={this.state.user}
+              handleLogout={this.handleLogout}
+              routes={this.state.routes}
+              handleUpdateRoute={this.handleUpdateRoute}
             />
           }/>
         </Switch>

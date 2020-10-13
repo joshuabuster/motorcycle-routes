@@ -15,6 +15,7 @@ const UserPage = (props) => {
             <h3>Route: PCH</h3>
             <h3>Route: Rock Store</h3>
             <h3>Route: Newcomb's Ranch</h3>
+            <Link to="/add" >ADD NEW ROUTE</Link>
         </div>
     )
     
