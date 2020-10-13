@@ -11,9 +11,17 @@ const RoutesIndexPage = (props) => {
                 handleLogout={props.handleLogout}
             />
             <h1>Motorcycle Routes Index Page</h1>
-            <h3>Route: PCH</h3>
-            <h3>Route: Rock Store</h3>
-            <h3>Route: Newcomb's Ranch</h3>
+            <hr></hr>
+            <div className='routeList container'>
+                {props.routes.map(route => 
+                    <div className="individualRoute container">
+                        <h3>Name: {route.name}</h3>
+                        <div>Start Point: {route.startPoint}</div>
+                        <div>End Point: {route.endPoint}</div>
+                        <div>Distance: {route.distance} miles</div>
+                    </div>
+                )}
+            </div>
         </div>
     )
 }

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Link, NavLink, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import * as routeAPI from "../../utils/routeService";
-// User sign in and login pages
 import LoginPage from "../LoginPage/LoginPage";
 import SignupPage from "../../pages/SignupPage/SignupPage";
 import LandingPage from "../../pages/LandingPage/LandingPage";
@@ -87,12 +86,17 @@ class App extends Component {
             />
           }/>
           <Route exact path='/index' render={() =>
-            <RoutesIndexPage />
+            <RoutesIndexPage
+              user={this.state.user}
+              handleLogout={this.handleLogout}
+              routes={this.state.routes}
+            />
           }/>
           <Route exact path='/userpage' render={() =>
             <UserPage
               user={this.state.user}
               handleLogout={this.handleLogout}
+              routes={this.state.routes}
             />
           }/>
         </Switch>
