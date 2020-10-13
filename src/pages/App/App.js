@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Link, NavLink, Switch } from "react-router-dom";
-// import * as routeAPI from "../../utils/routeService";
+import * as routeAPI from "../../utils/routeService";
 // User sign in and login pages
 import LoginPage from "../LoginPage/LoginPage";
 import SignupPage from "../../pages/SignupPage/SignupPage";
@@ -18,7 +18,18 @@ class App extends Component {
       user: userService.getUser()
     }
   }
+  /*-- CRUD --*/
+  handleAddRoute = async (newRouteData) => {
+    const newRoute = await routeAPI.create(newRouteData);
+    this.setState(
+      (state) => ({
+        routes: [...state.routes, newRoute],
+      }),
+      () => this.props.history.push('/')
+    );
+  };
 
+  /*-- Auth --*/
   handleLogout = () => {
     userService.logout();
     this.setState({ user: null });
@@ -29,7 +40,10 @@ class App extends Component {
   }
 
   /*-- Lifecycle Methods --*/
-  
+  async componentDidMount() {
+    const routes = await routeAPI.getAll();
+    this.setState({ routes });
+  }
 
   render() {
     return(

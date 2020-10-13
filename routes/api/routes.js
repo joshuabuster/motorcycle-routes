@@ -5,7 +5,12 @@ const routesCtrl = require('../../controllers/routes');
 /*--------- Public Routes ----------*/
 router.get('/', routesCtrl.index);
 
+
 /*-------- Protected Routes --------*/
+router.get('/:id', checkAuth, routesCtrl.show);
+router.post('/', checkAuth, routesCtrl.create);
+router.put('/:id', checkAuth, routesCtrl.update);
+router.delete('/:id', checkAuth, routesCtrl.deleteOne);
 
 
 /*--  Helper Functions --*/
