@@ -1,6 +1,5 @@
 import { PromiseProvider } from 'mongoose';
 import React from 'react';
-import { Link } from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
 import './LandingPage.css';
 
@@ -13,6 +12,7 @@ const LandingPage = (props) => {
             />
             <h1>Motorcyle Routes Landing Page</h1>
             <p>Your journey starts here</p>
+            <hr></hr>
         </div>
     );
 }

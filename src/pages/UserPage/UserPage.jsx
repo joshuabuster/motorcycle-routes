@@ -12,9 +12,6 @@ const UserPage = (props) => {
             />
             <h1>{props.user.name.toUpperCase()}'S PERSONAL PAGE</h1>
             <h2>Your Routes:</h2>
-            <h3>Route: PCH</h3>
-            <h3>Route: Rock Store</h3>
-            <h3>Route: Newcomb's Ranch</h3>
             <Link to="/add" >ADD NEW ROUTE</Link>
         </div>
     )

@@ -5,7 +5,7 @@ import * as routeAPI from "../../utils/routeService";
 import LoginPage from "../LoginPage/LoginPage";
 import SignupPage from "../../pages/SignupPage/SignupPage";
 import LandingPage from "../../pages/LandingPage/LandingPage";
-import RoutesIndexPage from "../../pages/RoutesIndexPage/RoutesIndexPage";
+import IndexPage from "../../pages/IndexPage/IndexPage";
 import UserPage from "../../pages/UserPage/UserPage";
 import AddRoutePage from "../../pages/AddRoutePage/AddRoutePage"
 import EditRoutePage from "../../pages/EditRoutePage/EditRoutePage"
@@ -88,7 +88,7 @@ class App extends Component {
             />
           }/>
           <Route exact path='/index' render={() =>
-            <RoutesIndexPage
+            <IndexPage
               user={this.state.user}
               handleLogout={this.handleLogout}
               routes={this.state.routes}

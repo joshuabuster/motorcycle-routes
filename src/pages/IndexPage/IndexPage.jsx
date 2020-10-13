@@ -1,7 +1,7 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
-import './RoutesIndexPage.css';
+import './IndexPage.css';
 
 const RoutesIndexPage = (props) => {
     return(
@@ -16,10 +16,10 @@ const RoutesIndexPage = (props) => {
             <div className='routeList container'>
                 {props.routes.map(route => 
                     <div className="individualRoute container">
-                        <h3>Name: {route.name}</h3>
-                        <div>Start Point: {route.startPoint}</div>
-                        <div>End Point: {route.endPoint}</div>
-                        <div>Distance: {route.distance} miles</div>
+                        {console.log(route)}
+                        <h3>{route.name}</h3>
+                        <div>Distance: {route.miles} miles</div>
+                        <div>Rating: {route.rating}</div>
                     </div>
                 )}
             </div>

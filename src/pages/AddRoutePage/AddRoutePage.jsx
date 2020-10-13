@@ -31,7 +31,7 @@ class AddRoutePage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="add-form">
         <h1>Add New Route</h1>
         <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
           <div className="form-group">
