@@ -11,8 +11,21 @@ const UserPage = (props) => {
                 handleLogout={props.handleLogout}
             />
             <h1>{props.user.name.toUpperCase()}'S PERSONAL PAGE</h1>
+            <hr></hr>
             <h2>Your Routes:</h2>
-            <Link to="/add" >ADD NEW ROUTE</Link>
+            <div className='routeList container'>
+                {props.routes.map(route => 
+                    <div className="individualRoute container">
+                        {console.log(route)}
+                        <h3>{route.name}</h3>
+                        <div>Distance: {route.miles} miles</div>
+                        <div>Rating: {route.rating}</div>
+                        <Link to='/show/:id'>More Details</Link>
+                    </div>
+                )}
+            </div>
+            <br></br>
+            <Link to="/add" className='btn btn-primary'>ADD NEW ROUTE</Link>
         </div>
     )
     

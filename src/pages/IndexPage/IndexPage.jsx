@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
 import './IndexPage.css';
 
@@ -20,6 +20,7 @@ const RoutesIndexPage = (props) => {
                         <h3>{route.name}</h3>
                         <div>Distance: {route.miles} miles</div>
                         <div>Rating: {route.rating}</div>
+                        <Link to='/show/:id'>More Details</Link>
                     </div>
                 )}
             </div>
