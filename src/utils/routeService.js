@@ -1,4 +1,4 @@
-const BASE_URL = '/api/puppies';
+const BASE_URL = '/api/routes';
 
 module.exports = {
     getAll,

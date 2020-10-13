@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './AddRoutePage.css';
 
 class AddRoutePage extends Component {
   state = {
@@ -47,7 +48,7 @@ class AddRoutePage extends Component {
             <label>Start Point (address)</label>
             <input
               className="form-control"
-              startPoint="startPoint"
+              name="startPoint"
               value={this.state.formData.startPoint}
               onChange={this.handleChange}
               required
@@ -57,7 +58,7 @@ class AddRoutePage extends Component {
             <label>End Point (address)</label>
             <input
               className="form-control"
-              endPoint="endPoint"
+              name="endPoint"
               value={this.state.formData.endPoint}
               onChange={this.handleChange}
             />
@@ -66,7 +67,7 @@ class AddRoutePage extends Component {
             <label>Distance (in miles)</label>
             <input
               className="form-control"
-              miles="miles"
+              name="miles"
               value={this.state.formData.miles}
               onChange={this.handleChange}
             />
@@ -75,7 +76,7 @@ class AddRoutePage extends Component {
             <label>Difficulty (Easy, Moderate, Difficult)</label>
             <input
               className="form-control"
-              difficulty="difficulty"
+              name="difficulty"
               value={this.state.formData.difficulty}
               onChange={this.handleChange}
             />
@@ -84,7 +85,7 @@ class AddRoutePage extends Component {
             <label>Rating (1-5: 5 being Great!)</label>
             <input
               className="form-control"
-              rating="rating"
+              name="rating"
               value={this.state.formData.rating}
               onChange={this.handleChange}
             />

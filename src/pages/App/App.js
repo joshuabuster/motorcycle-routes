@@ -26,7 +26,7 @@ class App extends Component {
       (state) => ({
         routes: [...state.routes, newRoute],
       }),
-      () => this.props.history.push('/')
+      () => this.props.history.push('/userpage')
     );
   };
 
@@ -109,12 +109,13 @@ class App extends Component {
               handleAddRoute={this.handleAddRoute}
             />
           }/>
-          <Route exact path='/add' render={() =>
+          <Route exact path='/edit' render={({location}) =>
             <EditRoutePage
               user={this.state.user}
               handleLogout={this.handleLogout}
               routes={this.state.routes}
               handleUpdateRoute={this.handleUpdateRoute}
+              location={location}
             />
           }/>
         </Switch>

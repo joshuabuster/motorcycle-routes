@@ -11,6 +11,7 @@ const RoutesIndexPage = (props) => {
                 handleLogout={props.handleLogout}
             />
             <h1>Motorcycle Routes Index Page</h1>
+            <p>list of all routes (pubic)</p>
             <hr></hr>
             <div className='routeList container'>
                 {props.routes.map(route => 
