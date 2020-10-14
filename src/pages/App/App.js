@@ -17,10 +17,15 @@ class App extends Component {
     super();
     this.state ={
       routes: [],
-      queuedroutes: [],
+      queuedRoutes: [],
       user: userService.getUser()
     }
   }
+
+  // handleAddQueuedRoute = async (newQueuedRouteData) => {
+  //   const newQueuedRoute = await routeAPI.
+  // }
+
   /*-- CRUD --*/
   handleAddRoute = async (newRouteData) => {
     const newRoute = await routeAPI.create(newRouteData);
@@ -67,12 +72,9 @@ class App extends Component {
     this.setState({ routes });
   }
 
-
-
   render() {
     
     const userRoutes = this.state.user ? this.state.routes.filter(r => r.user === this.state.user._id) : [];
-    // console.log(userRoutes);
 
     return(
       <div>
