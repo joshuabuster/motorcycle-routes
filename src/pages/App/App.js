@@ -71,7 +71,7 @@ class App extends Component {
 
   render() {
     
-    const userRoutes = this.state.routes.filter(r => r.user === this.state.user._id)
+    const userRoutes = this.state.user ? this.state.routes.filter(r => r.user === this.state.user._id) : [];
     // console.log(userRoutes);
 
     return(
