@@ -26,7 +26,7 @@ class App extends Component {
   //   const newQueuedRoute = await routeAPI.
   // }
 
-  /*-- CRUD --*/
+  /*-- CRUD ON ROUTES --*/
   handleAddRoute = async (newRouteData) => {
     const newRoute = await routeAPI.create(newRouteData);
     this.setState(
@@ -87,8 +87,8 @@ class App extends Component {
           }/>
           <Route exact path='/signup' render={({ history }) =>
             <SignupPage
-              history={history}
               handleSignupOrLogin={this.handleSignupOrLogin}
+              history={history}
             />
           }/>
           <Route exact path='/login' render={({ history }) =>
@@ -120,16 +120,12 @@ class App extends Component {
           }/>
           <Route exact path='/add' render={() =>
             <AddRoutePage
-              user={this.state.user}
-              handleLogout={this.handleLogout}
               routes={this.state.routes}
               handleAddRoute={this.handleAddRoute}
             />
           }/>
           <Route exact path='/edit' render={({location}) =>
             <EditRoutePage
-              user={this.state.user}
-              handleLogout={this.handleLogout}
               routes={this.state.routes}
               handleUpdateRoute={this.handleUpdateRoute}
               location={location}
