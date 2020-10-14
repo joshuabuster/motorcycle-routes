@@ -6,11 +6,11 @@ const routesCtrl = require('../../controllers/routes');
 router.get('/', routesCtrl.index);
 router.get('/:id', routesCtrl.show);
 router.post('/', routesCtrl.create);
+router.put('/:id', routesCtrl.update);
+router.delete('/:id', routesCtrl.deleteOne);
 
 
 /*-------- Protected Routes --------*/
-router.put('/:id', checkAuth, routesCtrl.update);
-router.delete('/:id', checkAuth, routesCtrl.deleteOne);
 
 
 /*--  Helper Functions --*/

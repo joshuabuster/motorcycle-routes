@@ -17,6 +17,7 @@ class App extends Component {
     super();
     this.state ={
       routes: [],
+      queuedroutes: [],
       user: userService.getUser()
     }
   }
@@ -36,7 +37,7 @@ class App extends Component {
     const newRoutesArray = this.state.routes.map( route => route._id === updatedRoute._id ? updatedRoute : route);
     this.setState(
       { routes: newRoutesArray },
-      () => this.props.history.push('/')
+      () => this.props.history.push('/userpage')
     );
   };
 
@@ -46,7 +47,7 @@ class App extends Component {
       (state) => ({
         routes: state.routes.filter(route => route._id !== id),
       }),
-      () => this.props.history.push('/')
+      () => this.props.history.push('/userpage')
     );
   };
 

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './AddRoutePage.css';
+import {Link} from 'react-router-dom';
 
 class AddRoutePage extends Component {
   state = {
@@ -90,13 +91,9 @@ class AddRoutePage extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <button
-            type="submit"
-            className="btn"
-            disabled={this.state.invalidForm}
-          >
-            Add Route
-          </button>
+          <button type="submit" className="btn btn-success" disabled={this.state.invalidForm}>Add Route</button>
+          &nbsp;&nbsp;
+          <Link to='/userpage'>Cancel</Link>
         </form>
       </div>
     );

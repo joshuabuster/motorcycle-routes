@@ -23,9 +23,11 @@ function RouteCard({route, handleDeleteRoute}) {
         </dl>
       </div>
       <div className='panel-footer'>
-        <Link className="btn btn-primary" to='/index'>Back to Routes</Link>
-        <Link className='btn btn-xs btn-secondary' to={{pathname:'/edit', state: {route}}}>Edit</Link>
-        <button className='btn btn-xs btn-danger' onClick={() => handleDeleteRoute(route._id)}>Delete</button>
+        <Link className="btn btn-primary" to='/userpage'>Back to Userpage</Link>
+        &nbsp;&nbsp;
+        <Link className="btn btn-info" to={{pathname:'/edit', state: {route}}}>Edit</Link>
+        &nbsp;&nbsp;
+        <button className='btn btn-danger' onClick={() => handleDeleteRoute(route._id)}>Delete</button>
       </div>
     </div>
   );

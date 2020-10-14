@@ -13,7 +13,7 @@ class EditRoutePage extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.handleAddRoute(this.state.formData);
+    this.props.handleUpdateRoute(this.state.formData);
   };
 
   handleChange = e => {
