@@ -26,6 +26,14 @@ const UserPage = (props) => {
             </div>
             <br></br>
             <Link to="/add" className='btn btn-primary'>ADD NEW ROUTE</Link>
+            <br></br>
+            <br></br>
+            <h2>Routes in your Queue:</h2>
+            <div>
+                <div>
+                    <h3>None Yet</h3>
+                </div>
+            </div>
         </div>
     )
     

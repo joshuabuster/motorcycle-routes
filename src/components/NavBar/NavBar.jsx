@@ -4,25 +4,19 @@ import './NavBar.css';
 
 const NavBar = (props) => {
   let nav = props.user ?
-    <div>
-      <Link to='/' className='NavBar-link'>HOME</Link>
-      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <Link to='/index' className='NavBar-link'>ROUTES INDEX</Link>
-      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <Link to='' onClick={props.handleLogout} className='NavBar-link'>LOG OUT</Link>
-      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <Link to='/userpage' className="Navbar-link">{`${props.user.name.toUpperCase()}'S USERPAGE`}</Link>
-    </div>
+    <ul className="NavBar-container">
+      <li><Link to='/' className="NavBar-link">HOME</Link></li>
+      <li><Link to='/index' className="NavBar-link">ROUTES INDEX</Link></li>
+      <li><Link to='/userpage' className="Navbar-link">{`${props.user.name.toUpperCase()}'S USERPAGE`}</Link></li>
+      <li><Link to='' onClick={props.handleLogout} className="NavBar-link" id="logout">LOG OUT</Link></li>
+    </ul>
     :
-    <div>
-      <Link to='/' className='NavBar-link'>HOME</Link>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <Link to='/index' className='NavBar-link'>ROUTES INDEX</Link>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <Link to='/login' className='NavBar-link'>LOG IN</Link>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <Link to='/signup' className='NavBar-link'>SIGN UP</Link>
-    </div>;
+    <ul>
+      <li><Link to='/' className="NavBar-link">HOME</Link></li>
+      <li><Link to='/index' className="NavBar-link">ROUTES INDEX</Link></li>
+      <li><Link to='/login' className="NavBar-link" id="logout">LOG IN</Link></li>
+      <li><Link to='/signup' className="NavBar-link" id="logout">SIGN UP</Link></li>
+    </ul>;
 
   return (
     <div className='NavBar'>
