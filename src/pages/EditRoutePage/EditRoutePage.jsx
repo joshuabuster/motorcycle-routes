@@ -26,7 +26,7 @@ class EditRoutePage extends Component {
   render() {
     return (
       <div>
-        <h1>Add New Route</h1>
+        <h1>Edit Route</h1>
         <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
           <div className="form-group">
             <label>Name of Route</label>
@@ -86,7 +86,7 @@ class EditRoutePage extends Component {
           </div>
           <button
             type="submit"
-            className="btn"
+            className="btn btn-success"
             disabled={this.state.invalidForm}
           >
             Save Route
