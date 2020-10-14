@@ -19,8 +19,11 @@ const RoutesIndexPage = (props) => {
                         {console.log(route)}
                         <h3>{route.name}</h3>
                         <div>Distance: {route.miles} miles</div>
+                        <div>Start Point: {route.startPoint}</div>
+                        <div>End Point: {route.endPoint}</div>
+                        <div>Difficulty: {route.difficulty}</div>
                         <div>Rating: {route.rating}</div>
-                        <Link to='/show/:id'>More Details</Link>
+                        <button>Add To Your Queue</button>
                     </div>
                 )}
             </div>

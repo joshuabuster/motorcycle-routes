@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 
-function RouteCard({route}) { 
+function RouteCard({route, handleDeleteRoute}) { 
   return (
     <div className='panel panel-default'>
       <div className="panel-heading">
@@ -23,7 +23,9 @@ function RouteCard({route}) {
         </dl>
       </div>
       <div className='panel-footer'>
-        <Link to='/index'>Back to Routes</Link>
+        <Link className="btn btn-primary" to='/index'>Back to Routes</Link>
+        <Link className='btn btn-xs btn-secondary' to={{pathname:'/edit', state: {route}}}>Edit</Link>
+        <button className='btn btn-xs btn-danger' onClick={() => handleDeleteRoute(route._id)}>Delete</button>
       </div>
     </div>
   );

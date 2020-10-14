@@ -9,6 +9,7 @@ import IndexPage from "../../pages/IndexPage/IndexPage";
 import UserPage from "../../pages/UserPage/UserPage";
 import AddRoutePage from "../../pages/AddRoutePage/AddRoutePage"
 import EditRoutePage from "../../pages/EditRoutePage/EditRoutePage"
+import DetailPage from "../../pages/DetailPage/DetailPage"
 import userService from "../../utils/userService";
 
 class App extends Component {
@@ -94,6 +95,13 @@ class App extends Component {
               routes={this.state.routes}
             />
           }/>
+          <Route exact path="/details" render={({ location }) => 
+            <DetailPage 
+              location={location}
+              handleUpdateRoute={this.handleUpdateRoute}
+              handleDeleteRoute={this.handleDeleteRoute} 
+            />}
+          />
           <Route exact path='/userpage' render={() =>
             <UserPage
               user={this.state.user}
