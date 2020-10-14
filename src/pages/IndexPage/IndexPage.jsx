@@ -1,6 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
+import IndexListItem from '../../components/IndexListItem/IndexListItem';
 import './IndexPage.css';
 
 const RoutesIndexPage = (props) => {
@@ -15,16 +16,10 @@ const RoutesIndexPage = (props) => {
             <hr></hr>
             <div className='routeList container'>
                 {props.routes.map(route => 
-                    <div className="individualRoute container">
-                        {console.log(route)}
-                        <h3>{route.name}</h3>
-                        <div>Distance: {route.miles} miles</div>
-                        <div>Start Point: {route.startPoint}</div>
-                        <div>End Point: {route.endPoint}</div>
-                        <div>Difficulty: {route.difficulty}</div>
-                        <div>Rating: {route.rating}</div>
-                        <button>Add To Your Queue</button>
-                    </div>
+                    <IndexListItem
+                        route={route}
+                        key={route._id}
+                    />
                 )}
             </div>
         </div>

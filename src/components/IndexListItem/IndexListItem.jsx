@@ -4,7 +4,6 @@ import React from 'react';
 function IndexListItem ({route}) {
     return(
         <div className="individualRoute container">
-            {console.log(route)}
             <h3>{route.name}</h3>
             <div>Distance: {route.miles} miles</div>
             <div>Start Point: {route.startPoint}</div>

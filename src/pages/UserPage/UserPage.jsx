@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
+import UserpageListItem from '../../components/UserpageListItem/UserpageListItem';
 import './UserPage.css';
 
 const UserPage = (props) => {
@@ -15,13 +16,10 @@ const UserPage = (props) => {
             <h2>Your Routes:</h2>
             <div className='routeList container'>
                 {props.userRoutes.map(route => 
-                    <div className="individualRoute container">
-                        {console.log(route)}
-                        <h3>{route.name}</h3>
-                        <div>Distance: {route.miles} miles</div>
-                        <div>Rating: {route.rating}</div>
-                        <Link to={{pathname: '/details', state: {route}}}>More Details</Link>
-                    </div>
+                    <UserpageListItem
+                        route={route}
+                        key={route._id}
+                    />
                 )}
             </div>
             <br></br>
