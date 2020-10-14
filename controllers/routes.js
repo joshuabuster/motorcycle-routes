@@ -15,8 +15,10 @@ async function index(req, res) {
 }
 
 async function create(req, res) {
-  const route = await Route.create(req.body);
-  res.status(201).json(route);
+    console.log(req.user)
+    req.body.user = req.user;
+    const route = await Route.create(req.body);
+    res.status(201).json(route);
 }
 
 async function show(req, res) {

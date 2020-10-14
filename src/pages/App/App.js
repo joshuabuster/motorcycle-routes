@@ -67,7 +67,13 @@ class App extends Component {
     this.setState({ routes });
   }
 
+
+
   render() {
+    
+    const userRoutes = this.state.routes.filter(r => r.user === this.state.user._id)
+    // console.log(userRoutes);
+
     return(
       <div>
         <Switch>
@@ -107,7 +113,7 @@ class App extends Component {
             <UserPage
               user={this.state.user}
               handleLogout={this.handleLogout}
-              routes={this.state.routes}
+              userRoutes={userRoutes}
             />
           }/>
           <Route exact path='/add' render={() =>

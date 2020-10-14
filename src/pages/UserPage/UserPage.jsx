@@ -14,7 +14,7 @@ const UserPage = (props) => {
             <hr></hr>
             <h2>Your Routes:</h2>
             <div className='routeList container'>
-                {props.routes.map(route => 
+                {props.userRoutes.map(route => 
                     <div className="individualRoute container">
                         {console.log(route)}
                         <h3>{route.name}</h3>

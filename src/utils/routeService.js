@@ -1,3 +1,5 @@
+const { default: tokenService } = require("./tokenService");
+
 const BASE_URL = '/api/routes';
 
 module.exports = {
@@ -15,7 +17,7 @@ function getAll() {
 function create(route) {
     return fetch(BASE_URL, {
         method: 'POST',
-        headers: {'content-type': 'application/json'},
+        headers: {'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken()},
         body: JSON.stringify(route)
     }).then(res => res.json());
 }
