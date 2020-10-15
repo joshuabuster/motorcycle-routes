@@ -6,7 +6,9 @@ module.exports = {
     create,
     show,
     update,
-    deleteOne
+    deleteOne,
+    queueAdd,
+    queueRemove
 };
 
 async function index(req, res) {
@@ -15,7 +17,6 @@ async function index(req, res) {
 }
 
 async function create(req, res) {
-    console.log(req.user)
     req.body.user = req.user;
     const route = await Route.create(req.body);
     res.status(201).json(route);
@@ -35,4 +36,25 @@ async function deleteOne(req, res) {
     const deletedRoute = await Route.findByIdAndRemove(req.params.id);
     res.status(200).json(deletedRoute);
 }
+
+function queueAdd(req, res) {
+    Route.findById(req.params.id, function(err, route) {
+        route.subscribedUsers.push(req.user._id);
+        route.save(function(err) {
+            res.status(200).json(route)
+        });
+    });
+}
+
+function queueRemove(req, res) {
+    Route.findById(req.params.id, function(err, route) {
+        let index = route.subscribedUsers.indexOf(req.user._id);
+        if (index > -1) route.subscribedUsers.splice(index, 1);
+        route.save(function(err) {
+            res.status(200).json(route)
+        });
+    });
+}
+
+
 

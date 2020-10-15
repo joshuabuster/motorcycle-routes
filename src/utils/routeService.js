@@ -6,7 +6,9 @@ module.exports = {
     getAll,
     create,
     update,
-    deleteOne
+    deleteOne,
+    queueAdd,
+    queueRemove
 };
 
 function getAll() {
@@ -33,5 +35,19 @@ function update(route) {
 function deleteOne(id) {
     return fetch(`${BASE_URL}/${id}`, {
       method: 'DELETE'
+    }).then(res => res.json());
+}
+
+function queueAdd(id) {
+    return fetch(`${BASE_URL}/${id}/add`, {
+        method: 'PUT',
+        headers: {'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken()},
+    }).then(res => res.json());
+}
+
+function queueRemove(id) {
+    return fetch(`${BASE_URL}/${id}/remove`, {
+        method: 'PUT',
+        headers: {'content-type': 'application/json', 'Authorization': 'Bearer ' + tokenService.getToken()},
     }).then(res => res.json());
 }

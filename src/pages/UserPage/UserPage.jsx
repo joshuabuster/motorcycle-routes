@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import IndexListItem from '../../components/IndexListItem/IndexListItem';
 import NavBar from '../../components/NavBar/NavBar';
 import UserpageListItem from '../../components/UserpageListItem/UserpageListItem';
 import './UserPage.css';
@@ -29,7 +30,15 @@ const UserPage = (props) => {
             <h2>Routes in your Queue:</h2>
             <div>
                 <div>
-                    <h3>None Yet</h3>
+                    {props.queuedRoutes.map(route => 
+                        <IndexListItem
+                            route={route}
+                            key={route._id}
+                            handleAddToQueue={props.handleAddToQueue}
+                            handleRemoveFromQueue={props.handleRemoveFromQueue}
+                            user={props.user}
+                        />
+                    )}
                 </div>
             </div>
         </div>

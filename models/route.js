@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 const routeSchema = new Schema({
     user: {type: Schema.Types.ObjectId, ref: 'User'},
+    subscribedUsers: [{type: Schema.Types.ObjectId, ref: 'User'}],
     name: {type: String, required: true},
     startPoint: {type: String, required: true},
     endPoint: {type: String, required: true},

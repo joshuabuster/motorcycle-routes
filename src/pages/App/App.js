@@ -17,14 +17,30 @@ class App extends Component {
     super();
     this.state ={
       routes: [],
-      queuedRoutes: [],
       user: userService.getUser()
     }
   }
 
-  // handleAddQueuedRoute = async (newQueuedRouteData) => {
-  //   const newQueuedRoute = await routeAPI.
-  // }
+  /*----- Queue Functions -----*/
+
+  handleAddToQueue = async (id) => {
+    const updatedRoute = await routeAPI.queueAdd(id);
+    const newRoutesArray = this.state.routes.map( route => route._id === updatedRoute._id ? updatedRoute : route);
+    this.setState(
+      { routes: newRoutesArray },
+      () => this.props.history.push('/userpage')
+    );
+  };
+
+  handleRemoveFromQueue = async (id) => {
+    const updatedRoute = await routeAPI.queueRemove(id);
+    const newRoutesArray = this.state.routes.map( route => route._id === updatedRoute._id ? updatedRoute : route);
+    this.setState(
+      { routes: newRoutesArray },
+      () => this.props.history.push('/userpage')
+    );
+  };
+
 
   /*-- CRUD ON ROUTES --*/
   handleAddRoute = async (newRouteData) => {
@@ -75,6 +91,8 @@ class App extends Component {
   render() {
     
     const userRoutes = this.state.user ? this.state.routes.filter(r => r.user === this.state.user._id) : [];
+    // iterate through routes and pull out the ones with the user in the subscribedUsers array
+    const queuedRoutes = this.state.user ? this.state.routes.filter(r => r.subscribedUsers.includes(this.state.user._id)) : [];
 
     return(
       <div>
@@ -102,6 +120,8 @@ class App extends Component {
               user={this.state.user}
               handleLogout={this.handleLogout}
               routes={this.state.routes}
+              handleAddToQueue={this.handleAddToQueue}
+              handleRemoveFromQueue={this.handleRemoveFromQueue}
             />
           }/>
           <Route exact path="/details" render={({ location }) => 
@@ -116,6 +136,9 @@ class App extends Component {
               user={this.state.user}
               handleLogout={this.handleLogout}
               userRoutes={userRoutes}
+              queuedRoutes={queuedRoutes}
+              handleAddToQueue={this.handleAddToQueue}
+              handleRemoveFromQueue={this.handleRemoveFromQueue}
             />
           }/>
           <Route exact path='/add' render={() =>
