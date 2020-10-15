@@ -20,7 +20,7 @@ function IndexListItem (props) {
                         <button className="btn btn-danger" onClick={() => props.handleRemoveFromQueue(props.route._id)}>Remove From Queue</button>
                     </div>
                 :
-                    <p>NOT LOGGED IN!</p>
+                    <></>
             }
         </div>
     )
