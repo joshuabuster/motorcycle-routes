@@ -19,6 +19,9 @@ const RoutesIndexPage = (props) => {
                     <IndexListItem
                         route={route}
                         key={route._id}
+                        handleAddToQueue={props.handleAddToQueue}
+                        handleRemoveFromQueue={props.handleRemoveFromQueue}
+                        user={props.user}
                     />
                 )}
             </div>

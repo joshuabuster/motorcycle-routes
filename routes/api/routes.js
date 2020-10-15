@@ -1,16 +1,19 @@
 const express = require('express');
 const router = express.Router();
 const routesCtrl = require('../../controllers/routes');
+router.use(require('../../config/auth'));
 
 /*--------- Public Routes ----------*/
 router.get('/', routesCtrl.index);
-router.get('/:id', routesCtrl.show);
-router.post('/', routesCtrl.create);
-router.put('/:id', routesCtrl.update);
-router.delete('/:id', routesCtrl.deleteOne);
+router.put('/:id/add', routesCtrl.queueAdd)
+router.put('/:id/remove', routesCtrl.queueRemove)
 
 
 /*-------- Protected Routes --------*/
+router.post('/', checkAuth, routesCtrl.create);
+router.get('/:id', checkAuth, routesCtrl.show);
+router.put('/:id', checkAuth, routesCtrl.update);
+router.delete('/:id',checkAuth, routesCtrl.deleteOne);
 
 
 /*--  Helper Functions --*/
