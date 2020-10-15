@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Route, Switch } from "react-router-dom";
+import { Route, NavLink, Link, Switch } from "react-router-dom";
 import * as routeAPI from "../../utils/routeService";
 import LoginPage from "../LoginPage/LoginPage";
 import SignupPage from "../../pages/SignupPage/SignupPage";
