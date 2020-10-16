@@ -95,66 +95,92 @@ class App extends Component {
     const queuedRoutes = this.state.user ? this.state.routes.filter(r => r.subscribedUsers.includes(this.state.user._id)) : [];
 
     return(
-      <div>
-        <Switch>
-          <Route exact path='/' render={() =>
-            <LandingPage 
-              user={this.state.user}
-              handleLogout={this.handleLogout}
+      <div className="container">
+        <header className="App-header">
+          <nav className="navbar">
+            {this.state.user ?  (
+              <div>
+                <NavLink exact to="/">HOME</NavLink>
+                &nbsp;&nbsp;&nbsp;
+                <NavLink exact to="/index">ROUTE LIST</NavLink>
+                &nbsp;&nbsp;&nbsp;
+                <NavLink exact to="/userpage">{this.state.user.name.toUpperCase()}'S USERPAGE</NavLink>
+                &nbsp;&nbsp;&nbsp;
+                <Link to="" onClick={this.handleLogout}>LOG OUT</Link>
+                &nbsp;&nbsp;&nbsp;
+              </div>
+            ) : (
+              <div>
+                <NavLink exact to="/">HOME</NavLink>
+                &nbsp;&nbsp;&nbsp;
+                <NavLink exact to="/index">ROUTE LIST</NavLink>
+                &nbsp;&nbsp;&nbsp;
+                <NavLink exact to="/login">LOG IN</NavLink>
+                &nbsp;&nbsp;&nbsp;
+                <NavLink exact to="/signup">SIGN UP</NavLink>
+              </div>
+            )}
+          </nav>
+        </header>
+        <main>
+          <Switch>
+            <Route exact path='/' render={() =>
+              <LandingPage 
+                user={this.state.user}
+              />
+            }/>
+            <Route exact path='/signup' render={({ history }) =>
+              <SignupPage
+                handleSignupOrLogin={this.handleSignupOrLogin}
+                history={history}
+              />
+            }/>
+            <Route exact path='/login' render={({ history }) =>
+              <LoginPage
+                handleSignupOrLogin={this.handleSignupOrLogin}
+                history={history}
+              />
+            }/>
+            <Route exact path='/index' render={() =>
+              <IndexPage
+                user={this.state.user}
+                routes={this.state.routes}
+                handleAddToQueue={this.handleAddToQueue}
+                handleRemoveFromQueue={this.handleRemoveFromQueue}
+              />
+            }/>
+            <Route exact path="/details" render={({ location }) => 
+              <DetailPage 
+                location={location}
+                handleUpdateRoute={this.handleUpdateRoute}
+                handleDeleteRoute={this.handleDeleteRoute} 
+              />}
             />
-          }/>
-          <Route exact path='/signup' render={({ history }) =>
-            <SignupPage
-              handleSignupOrLogin={this.handleSignupOrLogin}
-              history={history}
-            />
-          }/>
-          <Route exact path='/login' render={({ history }) =>
-            <LoginPage
-              handleSignupOrLogin={this.handleSignupOrLogin}
-              history={history}
-            />
-          }/>
-          <Route exact path='/index' render={() =>
-            <IndexPage
-              user={this.state.user}
-              handleLogout={this.handleLogout}
-              routes={this.state.routes}
-              handleAddToQueue={this.handleAddToQueue}
-              handleRemoveFromQueue={this.handleRemoveFromQueue}
-            />
-          }/>
-          <Route exact path="/details" render={({ location }) => 
-            <DetailPage 
-              location={location}
-              handleUpdateRoute={this.handleUpdateRoute}
-              handleDeleteRoute={this.handleDeleteRoute} 
-            />}
-          />
-          <Route exact path='/userpage' render={() =>
-            <UserPage
-              user={this.state.user}
-              handleLogout={this.handleLogout}
-              userRoutes={userRoutes}
-              queuedRoutes={queuedRoutes}
-              handleAddToQueue={this.handleAddToQueue}
-              handleRemoveFromQueue={this.handleRemoveFromQueue}
-            />
-          }/>
-          <Route exact path='/add' render={() =>
-            <AddRoutePage
-              routes={this.state.routes}
-              handleAddRoute={this.handleAddRoute}
-            />
-          }/>
-          <Route exact path='/edit' render={({location}) =>
-            <EditRoutePage
-              routes={this.state.routes}
-              handleUpdateRoute={this.handleUpdateRoute}
-              location={location}
-            />
-          }/>
-        </Switch>
+            <Route exact path='/userpage' render={() =>
+              <UserPage
+                user={this.state.user}
+                handleLogout={this.handleLogout}
+                userRoutes={userRoutes}
+                queuedRoutes={queuedRoutes}
+                handleAddToQueue={this.handleAddToQueue}
+                handleRemoveFromQueue={this.handleRemoveFromQueue}
+              />
+            }/>
+            <Route exact path='/add' render={() =>
+              <AddRoutePage
+                routes={this.state.routes}
+                handleAddRoute={this.handleAddRoute}
+              />
+            }/>
+            <Route exact path='/edit' render={({location}) =>
+              <EditRoutePage
+                routes={this.state.routes}
+                handleUpdateRoute={this.handleUpdateRoute}
+                location={location}
+              />
+            }/>
+          </Switch>
+        </main>
       </div>
     )
   }

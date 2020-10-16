@@ -1,18 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import IndexListItem from '../../components/IndexListItem/IndexListItem';
-import NavBar from '../../components/NavBar/NavBar';
+// import NavBar from '../../components/NavBar/NavBar';
 import UserpageListItem from '../../components/UserpageListItem/UserpageListItem';
 import './UserPage.css';
 
 const UserPage = (props) => {
     return(
         <div>
-            <NavBar
+            {/* <NavBar
                 user={props.user}
                 handleLogout={props.handleLogout}
-            />
-            <h1>{props.user.name.toUpperCase()}'S PERSONAL PAGE</h1>
+            /> */}
+            <h1>{props.user.name}'s UserPage</h1>
             <hr></hr>
             <h2>Your Routes:</h2>
             <div className='routeList container'>
