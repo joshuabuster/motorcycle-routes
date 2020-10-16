@@ -91,7 +91,6 @@ class App extends Component {
   render() {
     
     const userRoutes = this.state.user ? this.state.routes.filter(r => r.user === this.state.user._id) : [];
-    // iterate through routes and pull out the ones with the user in the subscribedUsers array
     const queuedRoutes = this.state.user ? this.state.routes.filter(r => r.subscribedUsers.includes(this.state.user._id)) : [];
 
     return(
