@@ -15,7 +15,7 @@ function IndexListItem (props) {
                 props.user ? 
                     <div>
                         {/* route not in users queue ? show Add : show REMOVE*/}
-                        <button className="btn btn-success" onClick={() => props.handleAddToQueue(props.route._id)}>Add To Your Queue</button>
+                        <button className="btn btn-success" onClick={() => props.handleAddToQueue(props.route._id)} disabled={props.route.subscribedUsers.includes(props.user._id)}>Add To Your Queue</button>
                         &nbsp;
                         <button className="btn btn-danger" onClick={() => props.handleRemoveFromQueue(props.route._id)}>Remove From Queue</button>
                     </div>
