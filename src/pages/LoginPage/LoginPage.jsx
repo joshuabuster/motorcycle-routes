@@ -34,26 +34,28 @@ class LoginPage extends Component {
 
   render() {
     return (
-      <div className="LoginPage">
-        <h1>Login Here</h1>
-        <form className="form-horizontal" onSubmit={this.handleSubmit} >
-          <div className="form-group">
-            <div className="col-sm-12">
-              <input type="email" className="form-control" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
+      <div className="container">
+        <div className="login-page">
+          <h3>Log In</h3>
+          <form className="form-horizontal" onSubmit={this.handleSubmit} >
+            <div className="form-group">
+              <div className="col-sm-12">
+                <input type="email" className="form-control" placeholder="Email" value={this.state.email} name="email" onChange={this.handleChange} />
+              </div>
             </div>
-          </div>
-          <div className="form-group">
-            <div className="col-sm-12">
-              <input type="password" className="form-control" placeholder="Password" value={this.state.pw} name="pw" onChange={this.handleChange} />
+            <div className="form-group">
+              <div className="col-sm-12">
+                <input type="password" className="form-control" placeholder="Password" value={this.state.pw} name="pw" onChange={this.handleChange} />
+              </div>
             </div>
-          </div>
-          <div className="form-group">
-            <div className="col-sm-12 text-center">
-              <button className="btn btn-default">Log In</button>&nbsp;&nbsp;&nbsp;
-              <Link to='/'>Cancel</Link>
+            <div className="form-group">
+              <div className="col-sm-12 text-center">
+                <button className="btn btn-default">Log In</button>&nbsp;&nbsp;&nbsp;
+                <Link to='/'>Cancel</Link>
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     );
   }

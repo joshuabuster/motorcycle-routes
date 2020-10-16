@@ -21,8 +21,8 @@ class App extends Component {
     }
   }
 
-  /*----- Queue Functions -----*/
 
+  /*-- Queue Functions --*/
   handleAddToQueue = async (id) => {
     const updatedRoute = await routeAPI.queueAdd(id);
     const newRoutesArray = this.state.routes.map( route => route._id === updatedRoute._id ? updatedRoute : route);
@@ -96,27 +96,27 @@ class App extends Component {
     return(
       <div className="container">
         <header className="App-header">
-          <nav className="navbar">
+          <nav className="navbar navbar-dark bg-dark">
             {this.state.user ?  (
               <div>
-                <NavLink exact to="/">HOME</NavLink>
+                <NavLink className="nav-link" exact to="/">HOME</NavLink>
                 &nbsp;&nbsp;&nbsp;
-                <NavLink exact to="/index">ROUTE LIST</NavLink>
+                <NavLink className="nav-link" exact to="/index">ROUTE LIST</NavLink>
                 &nbsp;&nbsp;&nbsp;
-                <NavLink exact to="/userpage">{this.state.user.name.toUpperCase()}'S USERPAGE</NavLink>
+                <NavLink className="nav-link" exact to="/userpage">{this.state.user.name.toUpperCase()}'S USERPAGE</NavLink>
                 &nbsp;&nbsp;&nbsp;
-                <Link to="" onClick={this.handleLogout}>LOG OUT</Link>
+                <Link className="nav-link" to="" onClick={this.handleLogout}>LOG OUT</Link>
                 &nbsp;&nbsp;&nbsp;
               </div>
             ) : (
               <div>
-                <NavLink exact to="/">HOME</NavLink>
+                <NavLink className="nav-link" exact to="/">HOME</NavLink>
                 &nbsp;&nbsp;&nbsp;
-                <NavLink exact to="/index">ROUTE LIST</NavLink>
+                <NavLink className="nav-link" exact to="/index">ROUTE LIST</NavLink>
                 &nbsp;&nbsp;&nbsp;
-                <NavLink exact to="/login">LOG IN</NavLink>
+                <NavLink className="nav-link" exact to="/login">LOG IN</NavLink>
                 &nbsp;&nbsp;&nbsp;
-                <NavLink exact to="/signup">SIGN UP</NavLink>
+                <NavLink className="nav-link" exact to="/signup">SIGN UP</NavLink>
               </div>
             )}
           </nav>

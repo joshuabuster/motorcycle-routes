@@ -25,75 +25,77 @@ class EditRoutePage extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Edit Route</h1>
-        <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <label>Name of Route</label>
-            <input
-              className="form-control"
-              name="name"
-              value={this.state.formData.name}
-              onChange={this.handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label>Start Point (address)</label>
-            <input
-              className="form-control"
-              name="startPoint"
-              value={this.state.formData.startPoint}
-              onChange={this.handleChange}
-              required
-            />
-          </div>
-          <div className="form-group">
-            <label>End Point (address)</label>
-            <input
-              className="form-control"
-              name="endPoint"
-              value={this.state.formData.endPoint}
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <label>Distance (in miles)</label>
-            <input
-              className="form-control"
-              name="miles"
-              value={this.state.formData.miles}
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <label>Difficulty (Easy, Moderate, Difficult)</label>
-            <input
-              className="form-control"
-              name="difficulty"
-              value={this.state.formData.difficulty}
-              onChange={this.handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <label>Rating (1-5: 5 being Great!)</label>
-            <input
-              className="form-control"
-              name="rating"
-              value={this.state.formData.rating}
-              onChange={this.handleChange}
-            />
-          </div>
-          <button
-            type="submit"
-            className="btn btn-success"
-            disabled={this.state.invalidForm}
-          >
-            Save Route
-          </button>
-          &nbsp;&nbsp;
-          <Link to='/userpage'>Cancel</Link>
-        </form>
+      <div className='container'>
+        <div className='edit-page'>
+          <h1>Edit Route</h1>
+          <form ref={this.formRef} autoComplete="off" onSubmit={this.handleSubmit}>
+            <div className="form-group">
+              <label>Name of Route</label>
+              <input
+                className="form-control"
+                name="name"
+                value={this.state.formData.name}
+                onChange={this.handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>Start Point (address)</label>
+              <input
+                className="form-control"
+                name="startPoint"
+                value={this.state.formData.startPoint}
+                onChange={this.handleChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label>End Point (address)</label>
+              <input
+                className="form-control"
+                name="endPoint"
+                value={this.state.formData.endPoint}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label>Distance (in miles)</label>
+              <input
+                className="form-control"
+                name="miles"
+                value={this.state.formData.miles}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label>Difficulty (Easy, Moderate, Difficult)</label>
+              <input
+                className="form-control"
+                name="difficulty"
+                value={this.state.formData.difficulty}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <label>Rating (1-5: 5 being Great!)</label>
+              <input
+                className="form-control"
+                name="rating"
+                value={this.state.formData.rating}
+                onChange={this.handleChange}
+              />
+            </div>
+            <button
+              type="submit"
+              className="btn btn-success"
+              disabled={this.state.invalidForm}
+            >
+              Save Route
+            </button>
+            &nbsp;&nbsp;
+            <Link to='/userpage'>Cancel</Link>
+          </form>
+        </div>
       </div>
     );
   }
