@@ -6,7 +6,6 @@ const RoutesIndexPage = (props) => {
     return(
         <div>
             <h1>Motorcycle Routes Index Page</h1>
-            <p>list of all routes (pubic)</p>
             <hr></hr>
             <div>
                 {props.routes.map(route => 
