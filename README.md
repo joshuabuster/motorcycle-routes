@@ -20,7 +20,7 @@ none yet
 
 # Getting Started: 
 
-Checkout the site here => [Links-Reviews](https://motorcycle-routes.herokuapp.com/)
+Checkout the site here => [Motorcycle-Routes](https://motorcycle-routes.herokuapp.com/)
 
 Trello Board => [Trello](https://trello.com/b/Weq8l3UI/sei-project-4)
 

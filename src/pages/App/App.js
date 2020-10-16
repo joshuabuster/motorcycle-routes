@@ -21,8 +21,8 @@ class App extends Component {
     }
   }
 
-  /*----- Queue Functions -----*/
 
+  /*-- Queue Functions --*/
   handleAddToQueue = async (id) => {
     const updatedRoute = await routeAPI.queueAdd(id);
     const newRoutesArray = this.state.routes.map( route => route._id === updatedRoute._id ? updatedRoute : route);
