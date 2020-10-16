@@ -9,3 +9,21 @@ body {
     justify-content: center;
 }
 
+.navbar-container {
+    display: flex;
+    padding: 30px;
+    background-color: white;
+    justify-content: space-between;
+}
+
+.navbar-nav {
+    font-size: 30px;
+    text-decoration: none;
+    background-color: white;
+    padding: 8px;
+}
+
+
+
+
+
