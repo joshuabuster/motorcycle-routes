@@ -11,7 +11,7 @@ const UserPage = (props) => {
                 <h1>{props.user.name}'s UserPage</h1>
                 <hr></hr>
                 <h2>Your Routes:</h2>
-                <div className='routeList container'>
+                <div className='routeList-container'>
                     {props.userRoutes.map(route => 
                         <UserpageListItem
                             route={route}

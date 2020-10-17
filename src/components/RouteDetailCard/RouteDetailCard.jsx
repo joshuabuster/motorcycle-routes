@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import './RouteDetailCard.css';
 
 
 function RouteCard({route, handleDeleteRoute}) { 
@@ -11,7 +12,7 @@ function RouteCard({route, handleDeleteRoute}) {
             <h3 className='panel-title'>{route.name}</h3>
           </div>
           <div className='panel-body'>
-            <dl>
+            <dl className="card-content">
               <dt>Start Point</dt>
               <dd>{route.startPoint}</dd>
               <dt>End Point</dt>
