@@ -7,11 +7,11 @@ function IndexListItem (props) {
             <div className="individualRoute">
                 <h3>{props.route.name}</h3>
                 <hr></hr>
-                <div><b>Distance:</b> {props.route.miles} miles</div>
-                <div><b>Start Point:</b> {props.route.startPoint}</div>
-                <div><b>End Point:</b> {props.route.endPoint}</div>
-                <div><b>Difficulty:</b> {props.route.difficulty}</div>
-                <div><b>Rating:</b> {props.route.rating}</div>
+                <p><b>Distance:</b> {props.route.miles} miles</p>
+                <p><b>Start Point:</b> {props.route.startPoint}</p>
+                <p><b>End Point:</b> {props.route.endPoint}</p>
+                <p><b>Difficulty:</b> {props.route.difficulty}</p>
+                <p><b>Rating:</b> {props.route.rating}</p>
                 <br></br>
                 {/* !user logged in ? show empty div : show buttons */}
                 {

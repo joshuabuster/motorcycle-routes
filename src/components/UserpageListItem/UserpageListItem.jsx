@@ -8,8 +8,8 @@ function UserpageListItem ({route}) {
             <div className="userpage-item">
                 <h3 className="route-name">{route.name}</h3>
                 <hr></hr>
-                <div><b>Distance:</b> {route.miles} miles</div>
-                <div><b>Rating:</b> {route.rating}</div>
+                <p><b>Distance:</b> {route.miles} miles</p>
+                <p><b>Rating:</b> {route.rating}</p>
                 <br></br>
                 <Link className="btn btn-primary" to={{pathname: '/details', state: {route}}}>More Details</Link>
             </div>

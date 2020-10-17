@@ -181,7 +181,7 @@ class App extends Component {
           </Switch>
         </main>
         <footer>
-          <div>&copy; 2020 Motorcycle Routes Tracker</div>
+          <p>&copy; 2020 Motorcycle Routes Tracker</p>
         </footer>
       </div>
     )
