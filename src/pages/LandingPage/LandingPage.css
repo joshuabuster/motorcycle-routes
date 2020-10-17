@@ -3,7 +3,14 @@
 }
 
 h1 {
-    margin-top: 0; 
+    margin-top: 500px; 
     text-align: center;
-    font-size: 50px;
+    font-size: 100px;
 }
+
+.welcome {
+    margin-top: 270px; 
+    text-align: center;
+    font-size: 80px;
+}
+
