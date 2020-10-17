@@ -30,3 +30,4 @@ Trello Board => [Trello](https://trello.com/b/Weq8l3UI/sei-project-4)
 * Users can add commits to routes
 * Users can "Like" routes
 * Routes will have mini map in Details
+* Style for moble devices

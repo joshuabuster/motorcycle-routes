@@ -94,30 +94,30 @@ class App extends Component {
     const queuedRoutes = this.state.user ? this.state.routes.filter(r => r.subscribedUsers.includes(this.state.user._id)) : [];
 
     return(
-      <div className="container">
+      <div className="App">
         <header className="App-header">
-          <nav className="navbar navbar-dark bg-dark">
+          <nav className="navbar">
             {this.state.user ?  (
-              <div>
-                <NavLink className="nav-link" exact to="/">HOME</NavLink>
+              <ul className='navbar-container'>
+                <li><NavLink className="navbar-nav" exact to="/">HOME</NavLink></li>
                 &nbsp;&nbsp;&nbsp;
-                <NavLink className="nav-link" exact to="/index">ROUTE LIST</NavLink>
+                <li><NavLink className="navbar-nav" exact to="/index">ROUTE LIST</NavLink></li>
                 &nbsp;&nbsp;&nbsp;
-                <NavLink className="nav-link" exact to="/userpage">{this.state.user.name.toUpperCase()}'S USERPAGE</NavLink>
+                <li><NavLink className="navbar-nav" exact to="/userpage">{this.state.user.name.toUpperCase()}'S USERPAGE</NavLink></li>
                 &nbsp;&nbsp;&nbsp;
-                <Link className="nav-link" to="" onClick={this.handleLogout}>LOG OUT</Link>
+                <li><Link className="navbar-nav" id="logout" to="" onClick={this.handleLogout}>LOG OUT</Link></li>
                 &nbsp;&nbsp;&nbsp;
-              </div>
+              </ul>
             ) : (
-              <div>
-                <NavLink className="nav-link" exact to="/">HOME</NavLink>
+              <ul className="navbar-container">
+                <li><NavLink className="navbar-nav" exact to="/">HOME</NavLink></li>
                 &nbsp;&nbsp;&nbsp;
-                <NavLink className="nav-link" exact to="/index">ROUTE LIST</NavLink>
+                <li><NavLink className="navbar-nav" exact to="/index">ROUTE LIST</NavLink></li>
                 &nbsp;&nbsp;&nbsp;
-                <NavLink className="nav-link" exact to="/login">LOG IN</NavLink>
+                <li><NavLink className="navbar-nav" id="logout" exact to="/login">LOG IN</NavLink></li>
                 &nbsp;&nbsp;&nbsp;
-                <NavLink className="nav-link" exact to="/signup">SIGN UP</NavLink>
-              </div>
+                <li><NavLink className="navbar-nav" id="logout" exact to="/signup">SIGN UP</NavLink></li>
+              </ul>
             )}
           </nav>
         </header>
@@ -180,6 +180,9 @@ class App extends Component {
             }/>
           </Switch>
         </main>
+        <footer>
+          <div>&copy; 2020 Motorcycle Routes Tracker</div>
+        </footer>
       </div>
     )
   }
