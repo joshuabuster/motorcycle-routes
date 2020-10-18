@@ -20,7 +20,7 @@ This app is a place for motorcycle riders to track the routes that they themselv
 
 # Getting Started: 
 
-Checkout the site here => [Motorcycle-Routes](https://motorcycle-routes.herokuapp.com/)
+Checkout the site here => [Motorcycle-Routes-Tracker](https://motorcycle-routes.herokuapp.com/)
 
 Trello Board => [Trello](https://trello.com/b/Weq8l3UI/sei-project-4)
 
