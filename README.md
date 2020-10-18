@@ -4,7 +4,7 @@ This app is a place for motorcycle riders to track the routes that they themselv
 
 # Screenshots:
 
-none yet
+![landing-page](public/images/landing-page.png)
 
 # Technologies Used:
 
