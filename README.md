@@ -1,6 +1,6 @@
-# Motorcycle-Routes
+# Motorcycle-Routes-Tracker
 
-This app is a place for motorcycle riders to track the routes that they themselves have done and also will allow them to see what others have done. They can then see where to go next based on their skill set and/or the route's rating.
+This app is a place for motorcycle riders to track the routes that they themselves have done and to see what others have done. They can then see where to go next based on their skill set and/or the route's rating.
 
 # Screenshots:
 
@@ -11,11 +11,10 @@ This app is a place for motorcycle riders to track the routes that they themselv
 * HTML
 * CSS
 * Javascript
+* Mongo DB/ Mongoose
+* Express
 * React
 * Node.js
-* Express
-* Mongo DB
-* Mongoose
 * JWT-Based Authentication
 
 # Getting Started: 
@@ -30,4 +29,4 @@ Trello Board => [Trello](https://trello.com/b/Weq8l3UI/sei-project-4)
 * Users can add commits to routes
 * Users can "Like" routes
 * Routes will have mini map in Details
-* Style for moble devices
+* Style for mobile devices
