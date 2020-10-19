@@ -4,14 +4,14 @@
     height: fit-content;
     width: 350px;
     padding: 10px;
-    margin: 10px;
+    margin: 10px auto;
+    font-size: 18px;
     background-color: rgba(255, 255, 255, .2);
     box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
-    color: white;
 }
 
 .detail {
-    height: 310px;
+    height: 250px;
 }
 
 .button-footer {

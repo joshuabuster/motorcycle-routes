@@ -1,11 +1,11 @@
 .individualRoute {
     position: relative;
-    border: 2px solid white;
+    border: 3px solid rgb(255, 255, 255);
     height: fit-content;
     width: 350px;
     padding: 10px;
-    margin: 10px;
-    background-color: rgba(255, 255, 255, .2);
+    margin: 10px auto;
+    background-color: rgba(255, 255, 255, .4);
     box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
 }
 
