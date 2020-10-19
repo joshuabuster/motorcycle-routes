@@ -115,9 +115,6 @@ class App extends Component {
                 <li><NavLink className="navbar-nav" exact to="/index">ROUTE LIST</NavLink></li>
                 &nbsp;&nbsp;&nbsp;
                 <li><Link className="navbar-nav" id="logout" to="" onClick={this.handleLogout}>LOG OUT</Link></li>
-                {/* <li><NavLink className="navbar-nav" id="logout" exact to="/login">LOG IN</NavLink></li>
-                &nbsp;&nbsp;&nbsp;
-                <li><NavLink className="navbar-nav" id="logout" exact to="/signup">SIGN UP</NavLink></li> */}
               </ul>
             )}
           </nav>
