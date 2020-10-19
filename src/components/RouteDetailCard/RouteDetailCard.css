@@ -1,11 +1,20 @@
 .detail-card {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
+    position: relative;
+    border: 2px solid white;
+    height: fit-content;
+    width: 350px;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, .2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    color: white;
 }
 
-.card-content {
-    color: black;
+.detail {
+    height: 310px;
+}
+
+.button-footer {
+    display: flex;
+    justify-content: center;
 }

@@ -12,6 +12,7 @@ const LandingPage = () => {
                 <Link className='btn btn-default' to='/login'>Login</Link>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <Link className='btn btn-default' to='/signup'>Signup</Link> 
+                <div className="frontpage"></div>
             </div>          
         </div>
     );

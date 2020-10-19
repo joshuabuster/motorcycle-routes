@@ -8,7 +8,7 @@ const RoutesIndexPage = (props) => {
             <div className="index-page">
                 <h1>Motorcycle Routes Index Page</h1>
                 <hr></hr>
-                <div>
+                <div className="index-item">
                     {props.routes.map(route => 
                         <IndexListItem
                             route={route}
