@@ -4,7 +4,7 @@
     height: fit-content;
     width: 220px;
     padding: 10px;
-    margin: auto;
+    margin: 10px auto;
     background-color: rgba(255, 255, 255, .2);
     box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
 }
